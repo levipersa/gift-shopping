@@ -43,6 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
                     //do not allow anything else
                     .antMatchers("/api/login").permitAll()
                     .antMatchers("/api/user/create-user").permitAll()
+                    .antMatchers("/api/product/**").permitAll()
                     .anyRequest().authenticated();
 
             http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
