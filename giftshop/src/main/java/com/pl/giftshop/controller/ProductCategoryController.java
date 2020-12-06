@@ -2,7 +2,10 @@ package com.pl.giftshop.controller;
 
 import com.pl.giftshop.model.ProductCategory;
 import com.pl.giftshop.repository.ProductCategoryRepository;
+import com.pl.giftshop.service.ProductCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,26 +15,25 @@ import java.util.List;
 @RequestMapping("/api/category")
 public class ProductCategoryController {
 
+
     @Autowired
-    private ProductCategoryRepository productCategoryRepository;
+    private ProductCategoryService productCategoryService;
 
     @GetMapping("/all-category")
-    public ResponseEntity<List<ProductCategory>> getProductCategory() {
+    public Page<ProductCategory> getProductCategory(Pageable pageable) {
 
-        return ResponseEntity.ok(productCategoryRepository.findAll());
-
+        return productCategoryService.findAll(pageable);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<ProductCategory> getProductCategory(@PathVariable Long id) {
-        return ResponseEntity.of(productCategoryRepository.findById(id));
+        return ResponseEntity.ok(productCategoryService.findById(id));
     }
 
     @PostMapping("/create-category")
     public ResponseEntity<ProductCategory> createProductCategory(@RequestBody ProductCategory productCategory) {
 
-        productCategoryRepository.save(productCategory);
-        return ResponseEntity.ok(productCategory);
+        return ResponseEntity.ok(productCategoryService.create(productCategory));
     }
 
 

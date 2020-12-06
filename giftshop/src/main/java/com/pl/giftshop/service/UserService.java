@@ -22,14 +22,6 @@ public class UserService {
         this.usersRepository = usersRepository;
     }
 
-    public List<Users> findAll(Integer pageSize, Integer pageNo, String sortBy) {
-        Pageable pageable = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
-        Page<Users> usersPage = usersRepository.findAll(pageable);
-        if (usersPage.getContent().isEmpty() || usersPage.getContent() == null) {
-            throw new NoUsersFoundExceptions("No Users are present in the current list ");
-        }
-        return usersPage.getContent();
-    }
 
     public Users findById(Long id) {
         Optional<Users> user = usersRepository.findById(id);

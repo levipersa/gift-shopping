@@ -2,7 +2,11 @@ package com.pl.giftshop.controller;
 
 import com.pl.giftshop.model.Product;
 import com.pl.giftshop.repository.ProductRepository;
+import com.pl.giftshop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,25 +17,23 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    private ProductRepository productRepository;
+    private ProductService productService;
+
 
     @GetMapping("/all-product")
-    public ResponseEntity<List<Product>> getProduct() {
-
-        return ResponseEntity.ok(productRepository.findAll());
-
+    public Page<Product> getProduct(Pageable pageable) {
+        return  productService.findAll(pageable);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable Long id) {
-        return ResponseEntity.of(productRepository.findById(id));
+    public ResponseEntity<Product> getProductById(@RequestParam("id") Long id) {
+        return ResponseEntity.ok(productService.findById(id));
     }
 
     @PostMapping("/create-product")
     public ResponseEntity<Product> createProduct(@RequestBody Product product) {
 
-        productRepository.save(product);
-        return ResponseEntity.ok(product);
+        return ResponseEntity.ok(productService.create(product));
     }
 
 

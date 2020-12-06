@@ -3,9 +3,7 @@ package com.pl.giftshop.service;
 import com.pl.giftshop.exceptions.NoProductFoundExceptions;
 import com.pl.giftshop.exceptions.NoUsersFoundExceptions;
 import com.pl.giftshop.model.Product;
-import com.pl.giftshop.model.Users;
 import com.pl.giftshop.repository.ProductRepository;
-import com.pl.giftshop.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,19 +23,18 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public List<Product> findAll(Integer pageSize, Integer pageNo, String sortBy) {
-        Pageable pageable = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
+    public Page<Product> findAll(Pageable pageable) {
         Page<Product> productPage = productRepository.findAll(pageable);
         if (productPage.getContent().isEmpty() || productPage.getContent() == null) {
             throw new NoProductFoundExceptions("No Products are present in the current list ");
         }
-        return productPage.getContent();
+        return productPage;
     }
 
     public Product findById(Long id) {
         Optional<Product> product = productRepository.findById(id);
         if (!product.isPresent()) {
-            throw new NoUsersFoundExceptions("Product with id: " + id + " was not found!");
+            throw new NoProductFoundExceptions("Product with id: " + id + " was not found!");
         }
         return product.get();
     }
