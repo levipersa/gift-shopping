@@ -19,12 +19,14 @@ public class ProductCategoryController {
     @Autowired
     private ProductCategoryService productCategoryService;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/all-category")
     public Page<ProductCategory> getProductCategory(Pageable pageable) {
 
         return productCategoryService.findAll(pageable);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/{id}")
     public ResponseEntity<ProductCategory> getProductCategory(@PathVariable Long id) {
         return ResponseEntity.ok(productCategoryService.findById(id));
