@@ -20,6 +20,7 @@ public class ProductController {
     private ProductService productService;
 
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/all-product")
     public Page<Product> getProduct(Pageable pageable) {
         return  productService.findAll(pageable);

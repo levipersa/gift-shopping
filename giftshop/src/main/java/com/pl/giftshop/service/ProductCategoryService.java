@@ -4,6 +4,7 @@ import com.pl.giftshop.exceptions.NoProductCategoryFoundException;
 import com.pl.giftshop.exceptions.NoUsersFoundExceptions;
 import com.pl.giftshop.model.ProductCategory;
 import com.pl.giftshop.repository.ProductCategoryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -16,6 +17,7 @@ import java.util.Optional;
 @Service
 public class ProductCategoryService {
 
+    @Autowired
     private ProductCategoryRepository productCategoryRepository;
 
     public Page<ProductCategory> findAll(Pageable pageable) {
