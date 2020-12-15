@@ -1,12 +1,10 @@
 package com.pl.giftshop.controller;
 
 import com.pl.giftshop.model.Product;
-import com.pl.giftshop.repository.ProductRepository;
 import com.pl.giftshop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,9 +20,17 @@ public class ProductController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/all-product")
-    public Page<Product> getProduct(Pageable pageable) {
-        return  productService.findAll(pageable);
+    public List<Product> getProduct(Pageable pageable) {
+        return  productService.findAll(pageable).getContent();
     }
+
+
+    @GetMapping("/category-product")
+    public Page<Product> getProductByCategory (Long id, Pageable pageable) {
+        return productService.findByCategory(id,pageable);
+    }
+
+
 
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@RequestParam("id") Long id) {

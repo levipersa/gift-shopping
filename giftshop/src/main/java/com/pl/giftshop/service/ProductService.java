@@ -45,4 +45,11 @@ public class ProductService {
         return productRepository.save(product);
     }
 
+    public Page<Product> findByCategory(Long id, Pageable pageable) {
+        Page<Product> productPage = productRepository.findByCategoryId(id, pageable);
+        if (productPage.getContent().isEmpty() || productPage.getContent() == null) {
+            throw new NoProductFoundExceptions("Product belonging to the Category with id: " + id + " was not found!");
+        }
+        return productPage;
+    }
 }
