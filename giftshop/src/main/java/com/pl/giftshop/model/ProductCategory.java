@@ -23,4 +23,11 @@ public class ProductCategory {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
     private Set<Product> products;
 
+    @Override
+    public String toString() {
+        return "ProductCategory{" +
+                "id=" + id +
+                ", categoryName='" + categoryName + '\'' +
+                '}';
+    }
 }

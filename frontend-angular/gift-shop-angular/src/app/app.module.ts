@@ -13,6 +13,8 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { BsNavbarComponent } from './components/bs-navbar/bs-navbar.component';
+import { BsFooterComponent } from './components/bs-footer/bs-footer.component';
 
 
 
@@ -26,6 +28,8 @@ import { ProductListComponent } from './components/product-list/product-list.com
     CartDetailsComponent,
     UserComponent,
     LoginPageComponent,
+    BsNavbarComponent,
+    BsFooterComponent,
    
   ],
   imports: [

@@ -3,6 +3,7 @@ package com.pl.giftshop.service;
 import com.pl.giftshop.exceptions.NoProductFoundExceptions;
 import com.pl.giftshop.exceptions.NoUsersFoundExceptions;
 import com.pl.giftshop.model.Product;
+import com.pl.giftshop.model.ProductCategory;
 import com.pl.giftshop.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

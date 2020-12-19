@@ -16,7 +16,6 @@ public class Product {
     @Column(name = "id")
     private Long id;
 
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
     private ProductCategory category;
@@ -36,4 +35,16 @@ public class Product {
     @Column(name = "units_in_stock")
     private int unitsInStock;
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", category=" + category +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", unitPrice=" + unitPrice +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", unitsInStock=" + unitsInStock +
+                '}';
+    }
 }

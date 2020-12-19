@@ -1,0 +1,34 @@
+
+<html>
+    <head></head>
+        <body>
+            <div class="container">
+               
+                <table class="table">
+     
+                 <thead class="thead-dark">
+                     <tr>
+                         <th>Name</th>
+                         <th>Price</th>
+                         <th>Units in Stock</th>
+                     </tr>
+                 </thead>
+             
+                 <tbody>
+                     <tr *ngFor="let tempProduct of productsByCategory">
+                         <td>{{ tempProduct.name | json}}</td>
+                         <td>{{ tempProduct.unitPrice | json }}</td>
+                         <td>{{ tempProduct.unitsInStock | json }}</td>
+                     </tr>
+             
+                 </tbody>
+             </table>
+         
+             </div>
+     
+            
+        </body>
+</html>
+           
+
+   
