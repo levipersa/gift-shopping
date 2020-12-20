@@ -62,5 +62,13 @@ public class ProductController {
         return ResponseEntity.ok(productService.create(product));
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/delete-product/{id}")
+    public void deleteProduct(@PathVariable Long id) {
+
+        productService.delete(id);
+
+    }
+
 
 }

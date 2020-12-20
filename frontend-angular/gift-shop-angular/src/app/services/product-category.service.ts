@@ -9,7 +9,7 @@ import { ProductCategory } from 'src/common/product-category';
 })
 export class ProductCategoryService {
 
-  private baseUrl = 'http://localhost:8080/api/category/2'
+  private baseUrl = 'http://localhost:8080/api/category/'
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,6 +17,6 @@ export class ProductCategoryService {
 
     //@Todo: url based on catergory id .. will come back to this! (baseUrl)
 
-    return this.httpClient.get<ProductCategory>(this.baseUrl);
+    return this.httpClient.get<ProductCategory>(this.baseUrl+theCategoryId);
   }
 }

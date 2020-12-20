@@ -15,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { BsNavbarComponent } from './components/bs-navbar/bs-navbar.component';
 import { BsFooterComponent } from './components/bs-footer/bs-footer.component';
+import { RegisterPageComponent } from './register-page/register-page.component';
 
 
 
@@ -30,6 +31,7 @@ import { BsFooterComponent } from './components/bs-footer/bs-footer.component';
     LoginPageComponent,
     BsNavbarComponent,
     BsFooterComponent,
+    RegisterPageComponent,
    
   ],
   imports: [

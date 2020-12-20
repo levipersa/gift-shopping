@@ -46,6 +46,16 @@ public class ProductService {
         return productRepository.save(product);
     }
 
+
+    public void delete(Long id){
+
+        Optional<Product> productToDelete = productRepository.findById(id);
+
+        productRepository.delete(productToDelete.get());
+
+    }
+
+
     public Page<Product> findByCategory(Long id, Pageable pageable) {
         Page<Product> productPage = productRepository.findByCategoryId(id, pageable);
         if (productPage.getContent().isEmpty() || productPage.getContent() == null) {
