@@ -1,47 +1,20 @@
-<div
-  class="container"
-  *ngFor="let tempProduct of productsByCategory; index as i"
->
-  <div *ngIf="tempProduct.imageUrl">
-    <div class="row">
-      <div *ngIf="i % 2 == 0">
-        <div class="col-md-12">
-          <div class="card mb-4 text-white bg-dark">
-            <img
-              class="card-img-top"
-              src="{{ tempProduct.imageUrl }}"
-              alt="Card image cap"
-            />
-            <div class="card-body">
-              <h5 class="card-title">{{ tempProduct.name }}</h5>
-              <p class="card-text">{{ tempProduct.description }}</p>
-              <a
-                routerLink="product/+{{ tempProduct.id }}"
-                class="btn btn-outline-light btn-sm"
-                >Go to Product</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-      <div *ngIf="i % 2 != 0">
-        <div class="col-md-12">
-          <div class="card mb-4 text-white bg-dark">
-            <img
-              class="card-img-top"
-              src="{{ tempProduct.imageUrl }}"
-              alt="Card image cap"
-            />
-            <div class="card-body">
-              <h5 class="card-title">{{ tempProduct.name }}</h5>
-              <p class="card-text">{{ tempProduct.description }}</p>
-              <a
-                routerLink="product/+{{ tempProduct.id }}"
-                class="btn btn-outline-light btn-sm"
-                >Go to Product</a
-              >
-            </div>
-          </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mb-1" *ngFor="let product of productsByCategory">
+      <div class="card text-white bg-dark">
+        <img
+          class="card-img-top"
+          src="{{ product.imageUrl }}"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+          <a
+            routerLink="/product/{{ product.id }}"
+            class="btn btn-outline-light btn-sm"
+            >Go to Product</a
+          >
         </div>
       </div>
     </div>

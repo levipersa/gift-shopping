@@ -40,6 +40,7 @@
               class="first-slide"
               src="{{ product.imageUrl }}"
               alt="First slide"
+              style="object-fit: contain"
             />
             <div class="container">
               <div class="carousel-caption text-left">
@@ -93,104 +94,14 @@
         </a>
       </div>
     </div>
+    <div class="container">
+      <div class="blog-post">
+        <h2 class="blog-post-title">{{ product.name }}</h2>
 
-    <div class="blog-post">
-      <h2 class="blog-post-title">{{ product.name }}</h2>
-
-      <p>
-        This blog post shows a few different types of content that's supported
-        and styled with Bootstrap. Basic typography, images, and code are all
-        supported.
-      </p>
-      <hr />
-      <p>
-        Cum sociis natoque penatibus et magnis
-        <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu
-        leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed
-        posuere consectetur est at lobortis. Cras mattis consectetur purus sit
-        amet fermentum.
-      </p>
-      <blockquote>
         <p>
-          Curabitur blandit tempus porttitor.
-          <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo.
-          Nullam id dolor id nibh ultricies vehicula ut id elit.
+          {{ product.description }}
         </p>
-      </blockquote>
-      <p>
-        Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis
-        consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed
-        consectetur.
-      </p>
-      <h2>Heading</h2>
-      <p>
-        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
-        lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac,
-        vestibulum at eros.
-      </p>
-
-      <footer class="pt-4 my-md-5 pt-md-5 border-top">
-        <div class="row">
-          <div class="col-12 col-md">
-            <img
-              class="mb-2"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR2xJLjkgcwmXy2yySqSITs_jlxixOCuauwA&usqp=CAU"
-              alt=""
-              width="150"
-              height="100"
-            />
-            <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
-          </div>
-          <div class="col-6 col-md">
-            <h5>Features</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Cool stuff</a></li>
-              <li><a class="text-muted" href="#">Random feature</a></li>
-              <li><a class="text-muted" href="#">Team feature</a></li>
-              <li><a class="text-muted" href="#">Stuff for developers</a></li>
-              <li><a class="text-muted" href="#">Another one</a></li>
-              <li><a class="text-muted" href="#">Last time</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md">
-            <h5>Resources</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Resource</a></li>
-              <li><a class="text-muted" href="#">Resource name</a></li>
-              <li><a class="text-muted" href="#">Another resource</a></li>
-              <li><a class="text-muted" href="#">Final resource</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md">
-            <h5>About</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Team</a></li>
-              <li><a class="text-muted" href="#">Locations</a></li>
-              <li><a class="text-muted" href="#">Privacy</a></li>
-              <li><a class="text-muted" href="#">Terms</a></li>
-            </ul>
-          </div>
-        </div>
-      </footer>
-
-      <!-- Bootstrap core JavaScript
-    ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster -->
-      <script
-        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"
-      ></script>
-      <script>
-        window.jQuery ||
-          document.write(
-            '<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>'
-          );
-      </script>
-      <script src="../../../../extras/js/vendor/popper.min.js"></script>
-      <script src="../../../../extras/js/bootstrap.min.js"></script>
-      <script src="../../../../extras/js/vendor/holder.min.js"></script>
+      </div>
     </div>
   </body>
 </html>
