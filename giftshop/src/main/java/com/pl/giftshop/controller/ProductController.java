@@ -46,7 +46,7 @@ public class ProductController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/{id}")
-    public ResponseEntity<ProductDto> getProductById(@RequestParam("id") Long id) {
+    public ResponseEntity<ProductDto> getProductById(@PathVariable Long id) {
 
         Product p = productService.findById(id);
         ProductDto productDto = new ProductDto(p.getId(), p.getName(), p.getDescription(), p.getUnitPrice(), p.getImageUrl(), p.getUnitsInStock());

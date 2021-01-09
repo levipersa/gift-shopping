@@ -9,6 +9,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,9 +26,9 @@ public class LoginController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/api/login")
-    public ResponseEntity<?> login(@RequestBody Users users) {
+    public ResponseEntity<String> login(@RequestBody Users users) {
 
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(users.getUserName(), users.getPassword()));
@@ -38,7 +39,7 @@ public class LoginController {
 
         UserDetails userDetails = databaseUsersDetailsService.loadUserByUsername(users.getUserName());
 
-        return ResponseEntity.ok(jwtProvider.createToken(userDetails.getUsername()));
+        return ResponseEntity.ok("{ \"token\": \"" + jwtProvider.createToken(userDetails.getUsername()) + "\" }");
 
     }
 

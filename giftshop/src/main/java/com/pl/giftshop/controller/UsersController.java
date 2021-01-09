@@ -28,7 +28,7 @@ public class UsersController {
 
 
     @PostMapping("/create-user")
-    public ResponseEntity<Users> createProductCategory(@RequestBody Users users) {
+    public ResponseEntity<Users> createUser(@RequestBody Users users) {
 
         Users users1 = new Users();
         users1.setUserName(users.getUserName());
