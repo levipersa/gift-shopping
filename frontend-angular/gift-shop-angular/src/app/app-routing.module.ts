@@ -8,25 +8,17 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { ProductListComponent } from './components/product-list/product-list.component';
 
 const routes: Routes = [
-
-  
   { path: 'category/:id', component: ProductCategoryMenuComponent },
   { path: 'product/:id', component: ProductDetailsComponent },
   { path: 'cart', component: CartDetailsComponent },
-  { path: 'product', component: ProductDetailsComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'home', component: ProductListComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
-
-
 ];
 
 @NgModule({
-  imports: [NgbModule,
-    RouterModule.forRoot(routes)
-            
-  ],
-  exports: [RouterModule]
+  imports: [NgbModule, RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

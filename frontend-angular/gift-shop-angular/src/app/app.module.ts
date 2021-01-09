@@ -17,9 +17,6 @@ import { BsNavbarComponent } from './components/bs-navbar/bs-navbar.component';
 import { BsFooterComponent } from './components/bs-footer/bs-footer.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,15 +29,9 @@ import { RegisterPageComponent } from './register-page/register-page.component';
     BsNavbarComponent,
     BsFooterComponent,
     RegisterPageComponent,
-   
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    NgbModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [ProductService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

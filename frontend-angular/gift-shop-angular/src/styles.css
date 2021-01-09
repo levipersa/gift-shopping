@@ -1,166 +1,174 @@
 .fa-1x {
-    font-size: 1.5rem;
-    }
-    .navbar-toggler.toggler-example {
-    cursor: pointer;
-    }
-    .dark-blue-text {
-    color: #0A38F5;
-    }
-    .dark-pink-text {
-    color: #AC003A;
-    }
-    .dark-amber-text {
-    color: #ff6f00;
-    }
-    .dark-teal-text {
-    color: #004d40;
-    }
+  font-size: 1.5rem;
+}
+.navbar-toggler.toggler-example {
+  cursor: pointer;
+}
+.dark-blue-text {
+  color: #0a38f5;
+}
+.dark-pink-text {
+  color: #ac003a;
+}
+.dark-amber-text {
+  color: #ff6f00;
+}
+.dark-teal-text {
+  color: #004d40;
+}
 
-    :root {
-        --jumbotron-padding-y: 3rem;
-      }
-      
-      .jumbotron {
-        padding-top: var(--jumbotron-padding-y);
-        padding-bottom: var(--jumbotron-padding-y);
-        margin-bottom: 0;
-        background-color: #fff;
-      }
-      @media (min-width: 768px) {
-        .jumbotron {
-          padding-top: calc(var(--jumbotron-padding-y) * 2);
-          padding-bottom: calc(var(--jumbotron-padding-y) * 2);
-        }
-      }
-      
-      .jumbotron p:last-child {
-        margin-bottom: 0;
-      }
-      
-      .jumbotron-heading {
-        font-weight: 300;
-      }
-      
-      .jumbotron .container {
-        max-width: 40rem;
-      }
-      
-      footer {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-      }
-      
-      footer p {
-        margin-bottom: .25rem;
-      }
-      
-      .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+:root {
+  --jumbotron-padding-y: 3rem;
+}
 
-      body {
-        padding-top: 3.5rem;
-      }
+.jumbotron {
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: calc(var(--jumbotron-padding-y) * 2);
+    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+  }
+}
 
-      
-      .responsive{
-        max-width:100%;
-        max-height:100%;
-      }
-     
-     .center{
-       position: relative;
-       top: 100%;
-       left: 50%; 
-       transform: translate(-50%, -50%);
-     }
-     
-     .parent{
-       position: relative;
-     }
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
 
-     .container {
-      max-width: 960px;
-    }
-    
-    /*
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: 0.25rem;
+}
+
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+body {
+  padding-top: 3.5rem;
+}
+
+.responsive {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.center {
+  position: relative;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.parent {
+  position: relative;
+}
+
+.container {
+  max-width: 960px;
+}
+
+/*
      * Custom translucent site header
      */
-    
-    .site-header {
-      background-color: rgba(0, 0, 0, .85);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      backdrop-filter: saturate(180%) blur(20px);
-    }
-    .site-header a {
-      color: #999;
-      transition: ease-in-out color .15s;
-    }
-    .site-header a:hover {
-      color: #fff;
-      text-decoration: none;
-    }
-    
-    /*
+
+.site-header {
+  background-color: rgba(0, 0, 0, 0.85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+  color: #999;
+  transition: ease-in-out color 0.15s;
+}
+.site-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
      * Dummy devices (replace them with your own or something else entirely!)
      */
-    
-    .product-device {
-      position: absolute;
-      right: 10%;
-      bottom: -30%;
-      width: 300px;
-      height: 540px;
-      background-color: #333;
-      border-radius: 21px;
-      -webkit-transform: rotate(30deg);
-      transform: rotate(30deg);
-    }
-    
-    .product-device::before {
-      position: absolute;
-      top: 10%;
-      right: 10px;
-      bottom: 10%;
-      left: 10px;
-      content: "";
-      background-color: rgba(255, 255, 255, .1);
-      border-radius: 5px;
-    }
-    
-    .product-device-2 {
-      top: -25%;
-      right: auto;
-      bottom: 0;
-      left: 5%;
-      background-color: #e5e5e5;
-    }
-    
-    
-    /*
+
+.product-device {
+  position: absolute;
+  right: 10%;
+  bottom: -30%;
+  width: 300px;
+  height: 540px;
+  background-color: #333;
+  border-radius: 21px;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.product-device::before {
+  position: absolute;
+  top: 10%;
+  right: 10px;
+  bottom: 10%;
+  left: 10px;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.product-device-2 {
+  top: -25%;
+  right: auto;
+  bottom: 0;
+  left: 5%;
+  background-color: #e5e5e5;
+}
+
+/*
      * Extra utilities
      */
-    
-    .border-top { border-top: 1px solid #e5e5e5; }
-    .border-bottom { border-bottom: 1px solid #e5e5e5; }
-    
-    .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
-    
-    .flex-equal > * {
-      -ms-flex: 1;
-      -webkit-box-flex: 1;
-      flex: 1;
-    }
-    @media (min-width: 768px) {
-      .flex-md-equal > * {
-        -ms-flex: 1;
-        -webkit-box-flex: 1;
-        flex: 1;
-      }
-    }
-    
-    .overflow-hidden { overflow: hidden; }
 
-    /* stylelint-disable selector-list-comma-newline-after */
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+.flex-equal > * {
+  -ms-flex: 1;
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+@media (min-width: 768px) {
+  .flex-md-equal > * {
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    flex: 1;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* stylelint-disable selector-list-comma-newline-after */
 
 .blog-header {
   line-height: 1;
@@ -176,7 +184,12 @@
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
 
@@ -211,9 +224,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-scroller .nav-link {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  font-size: .875rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 0.875rem;
 }
 
 .card-img-right {
@@ -227,15 +240,25 @@ h1, h2, h3, h4, h5, h6 {
   flex: 0 0 auto;
 }
 
-.h-250 { height: 250px; }
+.h-250 {
+  height: 250px;
+}
 @media (min-width: 768px) {
-  .h-md-250 { height: 250px; }
+  .h-md-250 {
+    height: 250px;
+  }
 }
 
-.border-top { border-top: 1px solid #e5e5e5; }
-.border-bottom { border-bottom: 1px solid #e5e5e5; }
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
 
-.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
 
 /*
  * Blog name and description
@@ -271,7 +294,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 4rem;
 }
 .blog-post-title {
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
   font-size: 2.5rem;
 }
 .blog-post-meta {
@@ -287,12 +310,11 @@ h1, h2, h3, h4, h5, h6 {
   color: #999;
   text-align: center;
   background-color: #f9f9f9;
-  border-top: .05rem solid #e5e5e5;
+  border-top: 0.05rem solid #e5e5e5;
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
-
 
 /* GLOBAL STYLES
 -------------------------------------------------- */
@@ -303,7 +325,6 @@ body {
   padding-bottom: 3rem;
   color: #5a5a5a;
 }
-
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -331,7 +352,6 @@ body {
   height: 32rem;
 }
 
-
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
@@ -344,10 +364,9 @@ body {
   font-weight: 400;
 }
 .marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
 }
-
 
 /* Featurettes
 ------------------------- */
@@ -360,9 +379,8 @@ body {
 .featurette-heading {
   font-weight: 300;
   line-height: 1;
-  letter-spacing: -.05rem;
+  letter-spacing: -0.05rem;
 }
-
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
@@ -386,6 +404,6 @@ body {
   }
 }
 
-.active-link{
+.active-link {
   font-weight: bold;
 }

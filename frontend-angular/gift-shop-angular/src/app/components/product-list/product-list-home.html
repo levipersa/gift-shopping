@@ -1,87 +1,99 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="">
+    <title>Gift Shop V2</title>
 
-  <title>Gift Shop V2</title>
+    <!-- Bootstrap core CSS -->
 
-  <!-- Bootstrap core CSS -->
+    <!-- Custom styles for this template -->
+  </head>
 
-  <!-- Custom styles for this template -->
-
-</head>
-
-<body>
-
-
-
-
-
-  <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div>
-
-    <img class="img-fluid" src="https://d3eys52k95jjdh.cloudfront.net/wp-content/uploads/2019/12/patrick.jpg"
-      alt="Cover Photo" max-width=50%>
-    <p><a class="btn btn-dark btn-lg " href="#" role="button">Shop now &raquo;</a></p>
-
-  </div>
-  <div class="container" *ngFor="let tempProduct of products; index as i">
-
-    <div *ngIf="tempProduct.imageUrl">
-
-      <div class="row ">
-        <div *ngIf="i%2==0">
-          <div class="col-md-12">
-            <div class="card mb-4 text-white bg-dark">
-              <img class="card-img-top" src="{{tempProduct.imageUrl}}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">{{tempProduct.name}}</h5>
-                <p class="card-text">{{tempProduct.description}}</p>
-                <a href="http://www.jquery2dotnet.com/" class="btn btn-outline-light btn-sm">Go to Product</a>
+  <body>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div>
+      <img
+        class="img-fluid"
+        src="https://d3eys52k95jjdh.cloudfront.net/wp-content/uploads/2019/12/patrick.jpg"
+        alt="Cover Photo"
+        max-width="50%"
+      />
+      <p>
+        <a class="btn btn-dark btn-lg" href="#" role="button"
+          >Shop now &raquo;</a
+        >
+      </p>
+    </div>
+    <div class="container" *ngFor="let tempProduct of products; index as i">
+      <div *ngIf="tempProduct.imageUrl">
+        <div class="row">
+          <div *ngIf="i%2==0">
+            <div class="col-md-12">
+              <div class="card mb-4 text-white bg-dark">
+                <img
+                  class="card-img-top"
+                  src="{{tempProduct.imageUrl}}"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">{{tempProduct.name}}</h5>
+                  <p class="card-text">{{tempProduct.description}}</p>
+                  <a
+                    routerLink="/product/{{tempProduct.id}}"
+                    class="btn btn-outline-light btn-sm"
+                    >Go to Product</a
+                  >
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div *ngIf="i%2!=0">
-          <div class="col-md-12">
-            <div class="card mb-4 text-white bg-dark">
-              <img class="card-img-top" src="{{tempProduct.imageUrl}}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">{{tempProduct.name}}</h5>
-                <p class="card-text">{{tempProduct.description}}</p>
-                <a href="http://www.jquery2dotnet.com/" class="btn btn-outline-light btn-sm">Go to Product</a>
+          <div *ngIf="i%2!=0">
+            <div class="col-md-12">
+              <div class="card mb-4 text-white bg-dark">
+                <img
+                  class="card-img-top"
+                  src="{{tempProduct.imageUrl}}"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">{{tempProduct.name}}</h5>
+                  <p class="card-text">{{tempProduct.description}}</p>
+                  <a
+                    routerLink="/product/{{tempProduct.id}}"
+                    class="btn btn-outline-light btn-sm"
+                    >Go to Product</a
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-
-
-
-
-
-
-
-
-
-  <!-- Bootstrap core JavaScript
+    <!-- Bootstrap core JavaScript
     ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-  <script src="../../../../extras/js/vendor/popper.min.js"></script>
-  <script src="../../../../extras/js/bootstrap.min.js"></script>
-
-</body>
-
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>'
+        );
+    </script>
+    <script src="../../../../extras/js/vendor/popper.min.js"></script>
+    <script src="../../../../extras/js/bootstrap.min.js"></script>
+  </body>
 </html>

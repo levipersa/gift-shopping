@@ -1,34 +1,49 @@
-
-<html>
-    <head></head>
-        <body>
-            <div class="container">
-               
-                <table class="table">
-     
-                 <thead class="thead-dark">
-                     <tr>
-                         <th>Name</th>
-                         <th>Price</th>
-                         <th>Units in Stock</th>
-                     </tr>
-                 </thead>
-             
-                 <tbody>
-                     <tr *ngFor="let tempProduct of productsByCategory">
-                         <td>{{ tempProduct.name | json}}</td>
-                         <td>{{ tempProduct.unitPrice | json }}</td>
-                         <td>{{ tempProduct.unitsInStock | json }}</td>
-                     </tr>
-             
-                 </tbody>
-             </table>
-         
-             </div>
-     
-            
-        </body>
-</html>
-           
-
-   
+<div
+  class="container"
+  *ngFor="let tempProduct of productsByCategory; index as i"
+>
+  <div *ngIf="tempProduct.imageUrl">
+    <div class="row">
+      <div *ngIf="i % 2 == 0">
+        <div class="col-md-12">
+          <div class="card mb-4 text-white bg-dark">
+            <img
+              class="card-img-top"
+              src="{{ tempProduct.imageUrl }}"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ tempProduct.name }}</h5>
+              <p class="card-text">{{ tempProduct.description }}</p>
+              <a
+                routerLink="product/+{{ tempProduct.id }}"
+                class="btn btn-outline-light btn-sm"
+                >Go to Product</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="i % 2 != 0">
+        <div class="col-md-12">
+          <div class="card mb-4 text-white bg-dark">
+            <img
+              class="card-img-top"
+              src="{{ tempProduct.imageUrl }}"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ tempProduct.name }}</h5>
+              <p class="card-text">{{ tempProduct.description }}</p>
+              <a
+                routerLink="product/+{{ tempProduct.id }}"
+                class="btn btn-outline-light btn-sm"
+                >Go to Product</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

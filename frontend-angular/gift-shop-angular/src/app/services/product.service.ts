@@ -5,16 +5,14 @@ import { Product } from 'src/common/product';
 import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
+  private baseUrl = 'http://localhost:8080/api/product/all-product';
 
-  private baseUrl = 'http://localhost:8080/api/product/all-product'
-
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   getProductList(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(this.baseUrl);
   }
 }
-

@@ -5,26 +5,20 @@ import { Product } from 'src/common/product';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list-home.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-
-
   products: Product[];
-  
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
     this.listProducts();
   }
 
-  listProducts(){
-    this.productService.getProductList().subscribe(
-      data => {
-        this.products = data;
-      }
-    )
+  listProducts() {
+    this.productService.getProductList().subscribe((data) => {
+      this.products = data;
+    });
   }
-
 }
