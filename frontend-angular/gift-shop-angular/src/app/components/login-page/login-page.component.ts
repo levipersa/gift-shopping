@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -7,15 +9,23 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login-page.component.css'],
 })
 export class LoginPageComponent implements OnInit {
-  constructor(private authService: AuthService) {}
+  loginForm = new FormGroup({
+    userName: new FormControl(''),
+    password: new FormControl(''),
+  });
+
+  loginFailed = false;
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
 
   login() {
-    const credentials = {
-      userName: 'Persa',
-      password: '666',
-    };
-    this.authService.login(credentials);
+    this.authService.login(this.loginForm.value).subscribe((success) => {
+      if (!success) {
+        this.loginFailed = true;
+      } else {
+        this.router.navigate(['/']);
+      }
+    });
   }
 }

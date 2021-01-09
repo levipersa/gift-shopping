@@ -16,6 +16,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { BsNavbarComponent } from './components/bs-navbar/bs-navbar.component';
 import { BsFooterComponent } from './components/bs-footer/bs-footer.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,13 @@ import { RegisterPageComponent } from './register-page/register-page.component';
     BsFooterComponent,
     RegisterPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule,
+    ReactiveFormsModule,
+  ],
   providers: [ProductService],
   bootstrap: [AppComponent],
 })
