@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'bs-navbar',
@@ -8,8 +9,14 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class BsNavbarComponent implements OnInit {
   loggedIn = false;
-
-  constructor(private authService: AuthService) {
+  itemsQuantity: number;
+  constructor(
+    private authService: AuthService,
+    private cartService: CartService
+  ) {
+    this.cartService.cart.subscribe(
+      (cartItems) => (this.itemsQuantity = cartItems.length)
+    );
     this.authService.loggedInUser.subscribe((loggedIn) => {
       this.loggedIn = loggedIn;
     });

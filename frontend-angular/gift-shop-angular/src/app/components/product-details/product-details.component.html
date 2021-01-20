@@ -46,7 +46,10 @@
               <div class="carousel-caption text-left">
                 <h1>{{ product.name }}</h1>
                 <p>
-                  <a class="btn btn-dark btn-dark" href="#" role="button"
+                  <a
+                    class="btn btn-dark btn-dark"
+                    (click)="addToCart()"
+                    role="button"
                     >Add to cart</a
                   >
                 </p>

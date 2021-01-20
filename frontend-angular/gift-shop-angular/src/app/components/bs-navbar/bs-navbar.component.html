@@ -21,7 +21,9 @@
         <a class="nav-link" (click)="logOut()">Logout</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/cart">Cart</a>
+        <a class="nav-link" routerLink="/cart"
+          >Cart<span *ngIf="itemsQuantity"> ({{ itemsQuantity }})</span></a
+        >
       </li>
       <li ngbDropdown class="nav-item dropdown">
         <a

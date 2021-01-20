@@ -32,16 +32,10 @@ public class ProductController {
             ProductDto productDto = new ProductDto(p.getId(), p.getName(), p.getDescription(), p.getUnitPrice(), p.getImageUrl(), p.getUnitsInStock());
             productDtos.add(productDto);
         }
-        
-        return  productDtos;
+
+        return productDtos;
 
     }
-
-//    @CrossOrigin(origins = "http://localhost:4200")
-//    @GetMapping("/category-product")
-//    public List<Product> getProductByCategory (Long id, Pageable pageable) {
-//        return productService.findByCategory(id,pageable).getContent();
-//    }
 
 
     @CrossOrigin(origins = "http://localhost:4200")
