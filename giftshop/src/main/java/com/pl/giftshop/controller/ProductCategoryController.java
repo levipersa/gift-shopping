@@ -21,16 +21,8 @@ import java.util.Set;
 @RequestMapping("/api/category")
 public class ProductCategoryController {
 
-
     @Autowired
     private ProductCategoryService productCategoryService;
-
-//    @CrossOrigin(origins = "http://localhost:4200")
-//    @GetMapping("/all-category")
-//    public Page<ProductCategory> getProductCategory(Pageable pageable) {
-//
-//        return productCategoryService.findAll(pageable);
-//    }
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/{id}")
@@ -51,13 +43,10 @@ public class ProductCategoryController {
         return ResponseEntity.ok(productCategoryDto);
 
     }
-
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/create-category")
     public ResponseEntity<ProductCategory> createProductCategory(@RequestBody ProductCategory productCategory) {
 
         return ResponseEntity.ok(productCategoryService.create(productCategory));
     }
-
-
 }

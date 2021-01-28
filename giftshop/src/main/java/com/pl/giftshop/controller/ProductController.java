@@ -37,7 +37,6 @@ public class ProductController {
 
     }
 
-
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/{id}")
     public ResponseEntity<ProductDto> getProductById(@PathVariable Long id) {
